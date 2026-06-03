@@ -6,9 +6,10 @@ import * as THREE from "three";
 
 interface CharacterProps {
   scrollProgress: number;
+  opacity?: number;
 }
 
-export function Character({ scrollProgress }: CharacterProps) {
+export function Character({ scrollProgress, opacity = 1.0 }: CharacterProps) {
   const groupRef = useRef<THREE.Group>(null);
 
   useFrame((state) => {
@@ -27,6 +28,8 @@ export function Character({ scrollProgress }: CharacterProps) {
     );
   });
 
+  const isTransparent = opacity < 1.0;
+
   return (
     <group ref={groupRef} position={[0, -1, 0]}>
       {/* Head / Bust Placeholder */}
@@ -36,6 +39,8 @@ export function Character({ scrollProgress }: CharacterProps) {
           color="#333333"
           roughness={0.7}
           metalness={0.1}
+          transparent={isTransparent}
+          opacity={opacity}
         />
       </mesh>
 
@@ -45,6 +50,8 @@ export function Character({ scrollProgress }: CharacterProps) {
         <meshStandardMaterial
           color="#2a2a2a"
           roughness={0.8}
+          transparent={isTransparent}
+          opacity={opacity}
         />
       </mesh>
 
@@ -55,6 +62,8 @@ export function Character({ scrollProgress }: CharacterProps) {
           color="#1e1e1e" // Dark charcoal hoodie color
           roughness={0.9} // Extremely matte fabric feel
           metalness={0.0}
+          transparent={isTransparent}
+          opacity={opacity}
         />
       </mesh>
 
@@ -65,6 +74,8 @@ export function Character({ scrollProgress }: CharacterProps) {
           color="#888888"
           metalness={0.8}
           roughness={0.2}
+          transparent={isTransparent}
+          opacity={opacity}
         />
       </mesh>
     </group>
