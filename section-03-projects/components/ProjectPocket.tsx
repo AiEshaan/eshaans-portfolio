@@ -12,6 +12,8 @@ interface ProjectPocketProps {
 }
 
 export function ProjectPocket({ scrollProgress, onSelectProject, selectedProject }: ProjectPocketProps) {
+  if (selectedProject !== null) return null;
+
   return (
     <group>
       {/* Pocket Flap / Door */}

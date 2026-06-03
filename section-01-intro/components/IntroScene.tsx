@@ -10,6 +10,7 @@ import { AboutScene } from "../../section-02-about/components/AboutScene";
 import { PocketScene } from "../../section-03-projects/components/PocketScene";
 import { ProjectLoader } from "../../section-03-projects/components/ProjectLoader";
 import { useProjectNavigation } from "../../section-03-projects/hooks/useProjectNavigation";
+import { NeuraSentinelWorld } from "../../section-03-projects/worlds/neura-sentinel/NeuraSentinelWorld";
 
 export function IntroScene() {
   const [scrollProgress, setScrollProgress] = useState(0);
@@ -51,6 +52,12 @@ export function IntroScene() {
             scrollProgress={scrollProgress}
             onSelectProject={selectProject}
             selectedProject={selectedProject}
+          />
+
+          {/* 3D Neura Sentinel World */}
+          <NeuraSentinelWorld
+            isActive={selectedProject === "Neura Sentinel"}
+            onClose={() => selectProject(null)}
           />
           
           {/* Handles smooth camera updates */}
