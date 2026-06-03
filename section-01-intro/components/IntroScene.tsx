@@ -7,9 +7,13 @@ import { Character } from "./Character";
 import { CameraRig } from "./CameraRig";
 import { ScrollController } from "./ScrollController";
 import { AboutScene } from "../../section-02-about/components/AboutScene";
+import { PocketScene } from "../../section-03-projects/components/PocketScene";
+import { ProjectLoader } from "../../section-03-projects/components/ProjectLoader";
+import { useProjectNavigation } from "../../section-03-projects/hooks/useProjectNavigation";
 
 export function IntroScene() {
   const [scrollProgress, setScrollProgress] = useState(0);
+  const { selectedProject, selectProject } = useProjectNavigation();
 
   // Character body opacity fades out as we transition into the face reveal
   // Character fades out between scroll progress 0.3 and 0.45
@@ -41,6 +45,13 @@ export function IntroScene() {
 
           {/* About Section Scene (Face Reveal, Mindset Flow, and Story Transition) */}
           <AboutScene scrollProgress={scrollProgress} />
+
+          {/* Projects Pocket Scene (Pocket Door, Floating Capsules) */}
+          <PocketScene
+            scrollProgress={scrollProgress}
+            onSelectProject={selectProject}
+            selectedProject={selectedProject}
+          />
           
           {/* Handles smooth camera updates */}
           <CameraRig scrollProgress={scrollProgress} />
@@ -49,6 +60,12 @@ export function IntroScene() {
 
       {/* HTML Content Overlay & Smooth Scroll Engine */}
       <ScrollController onScrollProgress={setScrollProgress} />
+
+      {/* Fullscreen Overlay when a project is selected */}
+      <ProjectLoader
+        selectedProject={selectedProject}
+        onClose={() => selectProject(null)}
+      />
 
     </div>
   );
