@@ -72,9 +72,9 @@ export function SensorTrails() {
   return (
     <group>
       {/* 1. Spline motion track line */}
-      <line ref={lineRef} geometry={pathGeometry}>
-        <lineBasicMaterial color="#d4af37" transparent opacity={0.35} linewidth={1} />
-      </line>
+      <lineLoop ref={lineRef} geometry={pathGeometry}>
+        <lineBasicMaterial color="#d4af37" transparent opacity={0.35} />
+      </lineLoop>
 
       {/* 2. Floating sensor node particles */}
       <points ref={particlesRef}>
