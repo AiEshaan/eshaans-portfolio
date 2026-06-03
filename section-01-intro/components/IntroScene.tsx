@@ -10,7 +10,7 @@ import { AboutScene } from "../../section-02-about/components/AboutScene";
 import { PocketScene } from "../../section-03-projects/components/PocketScene";
 import { ProjectLoader } from "../../section-03-projects/components/ProjectLoader";
 import { useProjectNavigation } from "../../section-03-projects/hooks/useProjectNavigation";
-import { NeuraSentinelWorld } from "../../section-03-projects/worlds/neura-sentinel/NeuraSentinelWorld";
+import { projectWorlds } from "../../section-03-projects/data/world-registry";
 
 export function IntroScene() {
   const [scrollProgress, setScrollProgress] = useState(0);
@@ -54,11 +54,11 @@ export function IntroScene() {
             selectedProject={selectedProject}
           />
 
-          {/* 3D Neura Sentinel World */}
-          <NeuraSentinelWorld
-            isActive={selectedProject === "Neura Sentinel"}
-            onClose={() => selectProject(null)}
-          />
+          {/* Dynamic 3D Project World Exhibition from Registry */}
+          {selectedProject && projectWorlds[selectedProject] && React.createElement(projectWorlds[selectedProject], {
+            isActive: true,
+            onClose: () => selectProject(null)
+          })}
           
           {/* Handles smooth camera updates */}
           <CameraRig scrollProgress={scrollProgress} />
