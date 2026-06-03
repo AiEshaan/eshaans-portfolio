@@ -1,0 +1,33 @@
+{
+  "title": "YouTube Spam Detector",
+  "tagline": "Machine Learning Based Comment Classification",
+  "status": "Completed",
+  "category": "Machine Learning",
+  "description": "A machine learning system designed to classify YouTube comments as spam or legitimate content. The project applies natural language processing techniques to improve moderation efficiency.",
+  "problemSolved": "Manual moderation of large volumes of comments is inefficient and inconsistent.",
+  "techStack": [
+    "Python",
+    "Scikit-learn",
+    "Pandas",
+    "NumPy"
+  ],
+  "toolsUsed": [
+    "Jupyter Notebook",
+    "Google Colab",
+    "GitHub"
+  ],
+  "keyFeatures": [
+    "Spam Classification",
+    "Text Processing",
+    "Prediction Engine",
+    "Model Evaluation"
+  ],
+  "thumbnail": "",
+  "gallery": [],
+  "architectureDiagram": "",
+  "videoDemo": "",
+  "github": "",
+  "liveDemo": "",
+  "featured": true,
+  "displayOrder": 3
+}

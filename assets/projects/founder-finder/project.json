@@ -1,0 +1,35 @@
+{
+  "title": "Founder Finder",
+  "tagline": "AI-Powered Founder Discovery and Research System",
+  "status": "Completed",
+  "category": "AI Automation",
+  "description": "Founder Finder automates the discovery, research, and qualification of startup founders using AI-powered workflows. The system reduces manual prospecting effort by gathering public information, analyzing profiles, and generating structured summaries.",
+  "problemSolved": "Manual founder research is time-consuming and difficult to scale.",
+  "techStack": [
+    "Python",
+    "OpenAI API",
+    "Google Gemini",
+    "Firebase"
+  ],
+  "toolsUsed": [
+    "n8n",
+    "LinkedIn",
+    "Google Sheets",
+    "GitHub"
+  ],
+  "keyFeatures": [
+    "Founder Discovery",
+    "Profile Analysis",
+    "AI Summaries",
+    "Automated Research Pipeline",
+    "Lead Qualification"
+  ],
+  "thumbnail": "",
+  "gallery": [],
+  "architectureDiagram": "",
+  "videoDemo": "",
+  "github": "",
+  "liveDemo": "",
+  "featured": true,
+  "displayOrder": 2
+}

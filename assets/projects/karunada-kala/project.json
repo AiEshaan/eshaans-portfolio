@@ -1,0 +1,36 @@
+{
+  "title": "Karunada Kala",
+  "tagline": "Digital Platform for Karnataka Culture and Experiences",
+  "status": "Internship Project",
+  "category": "Full Stack + AI",
+  "description": "Karunada Kala is a cultural discovery platform designed to help users explore Karnataka's events, traditions, artisans, and experiences. The platform combines modern web technologies with recommendation features to create engaging cultural journeys.",
+  "problemSolved": "Cultural events and local experiences are often fragmented across multiple sources.",
+  "techStack": [
+    "React",
+    "TypeScript",
+    "Firebase",
+    "Google Maps API",
+    "Google Gemini"
+  ],
+  "toolsUsed": [
+    "Cursor AI",
+    "GitHub",
+    "Firebase Console",
+    "Google Maps Platform"
+  ],
+  "keyFeatures": [
+    "Event Discovery",
+    "Experience Recommendations",
+    "Location Services",
+    "Interactive Maps",
+    "Cultural Exploration"
+  ],
+  "thumbnail": "",
+  "gallery": [],
+  "architectureDiagram": "",
+  "videoDemo": "",
+  "github": "",
+  "liveDemo": "",
+  "featured": true,
+  "displayOrder": 5
+}

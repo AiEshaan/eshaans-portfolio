@@ -1,0 +1,39 @@
+{
+  "title": "Neura Sentinel",
+  "tagline": "AI-Powered Sports Performance Monitoring System",
+  "status": "In Development",
+  "category": "AI + IoT + Sports Technology",
+  "description": "Neura Sentinel is an AI-powered sports coaching and performance monitoring system designed to provide real-time feedback to athletes using motion sensors, TinyML models, and intelligent analytics. The platform helps players improve technique, track performance, and receive coaching insights through an interactive application.",
+  "problemSolved": "Athletes often lack affordable real-time coaching and performance analytics during practice sessions.",
+  "techStack": [
+    "Python",
+    "TensorFlow",
+    "TinyML",
+    "Arduino Nano 33 BLE Sense",
+    "React",
+    "TypeScript",
+    "Firebase"
+  ],
+  "toolsUsed": [
+    "TensorFlow Lite",
+    "Arduino IDE",
+    "Lovable AI",
+    "Cursor AI",
+    "GitHub"
+  ],
+  "keyFeatures": [
+    "Real-Time Motion Tracking",
+    "Performance Analytics",
+    "AI Coaching Feedback",
+    "Sensor Integration",
+    "Interactive Dashboard"
+  ],
+  "thumbnail": "",
+  "gallery": [],
+  "architectureDiagram": "",
+  "videoDemo": "",
+  "github": "",
+  "liveDemo": "",
+  "featured": true,
+  "displayOrder": 1
+}

@@ -1,0 +1,33 @@
+{
+  "title": "Skin Cancer Classifier",
+  "tagline": "AI-Assisted Skin Lesion Classification",
+  "status": "Completed",
+  "category": "Computer Vision",
+  "description": "A deep learning project focused on identifying and classifying skin lesion images using convolutional neural networks. The system demonstrates how AI can support medical image analysis workflows.",
+  "problemSolved": "Early detection support tools can help improve diagnostic workflows.",
+  "techStack": [
+    "Python",
+    "TensorFlow",
+    "CNN",
+    "Keras"
+  ],
+  "toolsUsed": [
+    "Google Colab",
+    "Jupyter Notebook",
+    "GitHub"
+  ],
+  "keyFeatures": [
+    "Image Classification",
+    "CNN Architecture",
+    "Model Training",
+    "Prediction Pipeline"
+  ],
+  "thumbnail": "",
+  "gallery": [],
+  "architectureDiagram": "",
+  "videoDemo": "",
+  "github": "",
+  "liveDemo": "",
+  "featured": true,
+  "displayOrder": 4
+}
