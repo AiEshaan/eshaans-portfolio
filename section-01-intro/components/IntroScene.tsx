@@ -6,8 +6,7 @@ import { Environment } from "./Environment";
 import { Character } from "./Character";
 import { CameraRig } from "./CameraRig";
 import { ScrollController } from "./ScrollController";
-import { FaceReveal } from "../../section-02-about/components/FaceReveal";
-import { HowIThink } from "../../section-02-about/components/HowIThink";
+import { AboutScene } from "../../section-02-about/components/AboutScene";
 
 export function IntroScene() {
   const [scrollProgress, setScrollProgress] = useState(0);
@@ -40,11 +39,8 @@ export function IntroScene() {
             </group>
           )}
 
-          {/* 3D point cloud face reveal in Phase 3 */}
-          <FaceReveal scrollProgress={scrollProgress} />
-
-          {/* Floating 3D concept words in Phase 3 */}
-          <HowIThink scrollProgress={scrollProgress} />
+          {/* About Section Scene (Face Reveal, Mindset Flow, and Story Transition) */}
+          <AboutScene scrollProgress={scrollProgress} />
           
           {/* Handles smooth camera updates */}
           <CameraRig scrollProgress={scrollProgress} />
