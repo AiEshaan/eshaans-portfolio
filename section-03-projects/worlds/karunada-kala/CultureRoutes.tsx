@@ -28,9 +28,9 @@ export function CultureRoutes() {
   return (
     <group position={[0, -0.2, 0]} rotation={[-Math.PI / 2.4, 0, 0]}>
       {routeGeometries.map((geometry, index) => (
-        <line key={index} geometry={geometry}>
+        <lineSegments key={index} geometry={geometry}>
           <lineBasicMaterial color="#ffe5cc" transparent opacity={0.25} />
-        </line>
+        </lineSegments>
       ))}
     </group>
   );
