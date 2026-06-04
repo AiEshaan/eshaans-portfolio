@@ -1,0 +1,50 @@
+[
+  {
+    "category": "AI & LLMs",
+    "icon": "brain",
+    "tools": ["OpenAI API", "Google Gemini", "Claude API", "Prompt Engineering"],
+    "order": 1
+  },
+  {
+    "category": "Machine Learning",
+    "icon": "chart-line",
+    "tools": ["TensorFlow", "Scikit-learn", "Pandas", "NumPy", "TinyML"],
+    "order": 2
+  },
+  {
+    "category": "Full Stack Development",
+    "icon": "code",
+    "tools": ["React", "Next.js", "TypeScript", "HTML5", "CSS3", "TailwindCSS"],
+    "order": 3
+  },
+  {
+    "category": "Android Development",
+    "icon": "smartphone",
+    "tools": ["Kotlin", "Jetpack Compose", "Android SDK", "Java"],
+    "order": 4
+  },
+  {
+    "category": "Cloud & Backend",
+    "icon": "cloud",
+    "tools": ["Firebase", "Node.js", "Firestore", "Google Cloud Platform"],
+    "order": 5
+  },
+  {
+    "category": "Automation",
+    "icon": "cpu",
+    "tools": ["n8n", "Python Automation", "Google Sheets API", "LinkedIn Scrapers"],
+    "order": 6
+  },
+  {
+    "category": "UI/UX & Product Design",
+    "icon": "figma",
+    "tools": ["Figma", "UI Mockups", "Responsive Design", "Wireframing"],
+    "order": 7
+  },
+  {
+    "category": "Tools & Collaboration",
+    "icon": "git-branch",
+    "tools": ["Git", "GitHub", "VS Code", "Vercel", "Cursor AI"],
+    "order": 8
+  }
+]

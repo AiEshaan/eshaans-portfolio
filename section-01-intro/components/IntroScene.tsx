@@ -11,6 +11,7 @@ import { PocketScene } from "../../section-03-projects/components/PocketScene";
 import { ProjectLoader } from "../../section-03-projects/components/ProjectLoader";
 import { useProjectNavigation } from "../../section-03-projects/hooks/useProjectNavigation";
 import { projectWorlds } from "../../section-03-projects/data/world-registry";
+import { experienceWorlds } from "../../section-04-experience/data/experience-registry";
 import { ExperienceScene } from "../../section-04-experience/components/ExperienceScene";
 import { ExperienceLoader } from "../../section-04-experience/components/ExperienceLoader";
 import { useExperienceNavigation } from "../../section-04-experience/hooks/useExperienceNavigation";
@@ -70,6 +71,12 @@ export function IntroScene() {
             onSelectExperience={selectExperience}
             selectedExperience={selectedExperience}
           />
+
+          {/* Dynamic 3D Experience World from Registry */}
+          {selectedExperience && experienceWorlds[selectedExperience] && React.createElement(experienceWorlds[selectedExperience], {
+            isActive: true,
+            onClose: () => selectExperience(null)
+          })}
           
           {/* Handles smooth camera updates */}
           <CameraRig scrollProgress={scrollProgress} />
