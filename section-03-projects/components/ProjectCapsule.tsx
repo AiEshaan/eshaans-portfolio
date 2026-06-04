@@ -25,8 +25,8 @@ export function ProjectCapsule({ project, index, scrollProgress, onSelect, isSel
     const time = state.clock.getElapsedTime();
     
     let disperseProgress = 0;
-    if (scrollProgress >= 0.88) {
-      disperseProgress = (scrollProgress - 0.88) / 0.12;
+    if (scrollProgress >= 0.62) {
+      disperseProgress = (scrollProgress - 0.62) / 0.06;
       disperseProgress = Math.min(1.0, disperseProgress);
     }
 
@@ -48,7 +48,7 @@ export function ProjectCapsule({ project, index, scrollProgress, onSelect, isSel
   });
 
   // Calculate dynamic scale and opacity
-  const isActive = scrollProgress >= 0.88;
+  const isActive = scrollProgress >= 0.62;
   const scale = hovered ? 1.08 : 1.0;
 
   return (

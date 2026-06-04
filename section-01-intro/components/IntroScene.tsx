@@ -11,10 +11,14 @@ import { PocketScene } from "../../section-03-projects/components/PocketScene";
 import { ProjectLoader } from "../../section-03-projects/components/ProjectLoader";
 import { useProjectNavigation } from "../../section-03-projects/hooks/useProjectNavigation";
 import { projectWorlds } from "../../section-03-projects/data/world-registry";
+import { ExperienceScene } from "../../section-04-experience/components/ExperienceScene";
+import { ExperienceLoader } from "../../section-04-experience/components/ExperienceLoader";
+import { useExperienceNavigation } from "../../section-04-experience/hooks/useExperienceNavigation";
 
 export function IntroScene() {
   const [scrollProgress, setScrollProgress] = useState(0);
   const { selectedProject, selectProject } = useProjectNavigation();
+  const { selectedExperience, selectExperience } = useExperienceNavigation();
 
   // Character body opacity fades out as we transition into the face reveal
   // Character fades out between scroll progress 0.3 and 0.45
@@ -59,6 +63,13 @@ export function IntroScene() {
             isActive: true,
             onClose: () => selectProject(null)
           })}
+
+          {/* Experience Vault Scene (Zipper opening, Floating Capsules) */}
+          <ExperienceScene
+            scrollProgress={scrollProgress}
+            onSelectExperience={selectExperience}
+            selectedExperience={selectedExperience}
+          />
           
           {/* Handles smooth camera updates */}
           <CameraRig scrollProgress={scrollProgress} />
@@ -72,6 +83,12 @@ export function IntroScene() {
       <ProjectLoader
         selectedProject={selectedProject}
         onClose={() => selectProject(null)}
+      />
+
+      {/* Fullscreen Overlay when an experience is selected */}
+      <ExperienceLoader
+        selectedExperience={selectedExperience}
+        onClose={() => selectExperience(null)}
       />
 
     </div>

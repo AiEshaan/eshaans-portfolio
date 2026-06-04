@@ -128,6 +128,32 @@ export function ScrollController({ onScrollProgress }: ScrollControllerProps) {
           scrub: true,
         },
       });
+
+      // Experience Vault Intro Text Fade In / Out
+      gsap.fromTo(
+        ".exp-intro",
+        { opacity: 0, y: 40 },
+        {
+          opacity: 1,
+          y: 0,
+          scrollTrigger: {
+            trigger: ".trigger-experience-intro",
+            start: "top 60%",
+            end: "top 20%",
+            scrub: true,
+          },
+        }
+      );
+      gsap.to(".exp-intro", {
+        opacity: 0,
+        y: -40,
+        scrollTrigger: {
+          trigger: ".trigger-experience-intro",
+          start: "bottom 80%",
+          end: "bottom 40%",
+          scrub: true,
+        },
+      });
     }, containerRef);
 
     return () => {
@@ -145,6 +171,9 @@ export function ScrollController({ onScrollProgress }: ScrollControllerProps) {
       <div className="trigger-about-reveal h-screen w-full" />
       <div className="trigger-think h-[150vh] w-full" />
       <div className="trigger-outro h-screen w-full" />
+      <div className="trigger-projects-pocket h-screen w-full" />
+      <div className="trigger-experience-intro h-screen w-full" />
+      <div className="trigger-experience-open h-[150vh] w-full" />
       <div className="h-screen w-full" /> {/* Buffer zone */}
 
       {/* HTML Overlays */}
@@ -187,6 +216,18 @@ export function ScrollController({ onScrollProgress }: ScrollControllerProps) {
             </p>
             <p className="text-base md:text-lg font-light text-zinc-400 mt-2">
               {aboutContent.outro.line2}
+            </p>
+          </div>
+        </div>
+
+        {/* Experience Vault Intro Text Overlay */}
+        <div className="absolute inset-0 flex items-center justify-center p-8">
+          <div className="exp-intro opacity-0 text-center max-w-xl">
+            <p className="text-xl md:text-2xl font-light text-zinc-100 tracking-wide leading-relaxed">
+              Building products taught me skills.
+            </p>
+            <p className="text-base md:text-lg font-light text-zinc-400 mt-2">
+              Working with people taught me impact.
             </p>
           </div>
         </div>

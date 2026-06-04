@@ -14,10 +14,10 @@ export function PocketDoor({ scrollProgress }: PocketDoorProps) {
   useFrame(() => {
     if (!doorRef.current) return;
 
-    // Pocket door opening sequence is between scroll progress 0.82 and 0.95
+    // Pocket door opening sequence is between scroll progress 0.58 and 0.65
     let openProgress = 0;
-    if (scrollProgress >= 0.82) {
-      openProgress = (scrollProgress - 0.82) / 0.13;
+    if (scrollProgress >= 0.58) {
+      openProgress = (scrollProgress - 0.58) / 0.07;
       openProgress = Math.min(1.0, openProgress);
     }
 

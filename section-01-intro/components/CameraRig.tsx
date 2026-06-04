@@ -21,26 +21,26 @@ export function CameraRig({ scrollProgress }: CameraRigProps) {
     let lookY = 0;
     let lookZ = 0;
 
-    if (scrollProgress < 0.35) {
+    if (scrollProgress < 0.3) {
       // Phase 1: Intro sequence - slow push-in
-      const t = scrollProgress / 0.35;
-      targetX = THREE.MathUtils.lerp(0.0, 0.0, t);
+      const t = scrollProgress / 0.3;
+      targetX = 0.0;
       targetY = THREE.MathUtils.lerp(0.5, 0.4, t);
       targetZ = THREE.MathUtils.lerp(5.5, 3.5, t);
       
       lookY = THREE.MathUtils.lerp(0.0, 0.2, t);
-    } else if (scrollProgress >= 0.35 && scrollProgress < 0.8) {
+    } else if (scrollProgress >= 0.3 && scrollProgress < 0.58) {
       // Phase 2: About / Face Reveal - zoom to face, subtle orbit pan
-      const t = (scrollProgress - 0.35) / 0.45;
+      const t = (scrollProgress - 0.3) / 0.28;
       targetX = THREE.MathUtils.lerp(0.0, -0.15, t);
       targetY = THREE.MathUtils.lerp(0.4, 0.9, t);
       targetZ = THREE.MathUtils.lerp(3.5, 2.3, t);
       
-      lookX = THREE.MathUtils.lerp(0.0, 0.0, t);
+      lookX = 0;
       lookY = THREE.MathUtils.lerp(0.2, 0.9, t);
-    } else {
-      // Phase 3: Transition to projects - plunge down towards the hoodie pocket (x is negative, y is lower)
-      const t = (scrollProgress - 0.8) / 0.2;
+    } else if (scrollProgress >= 0.58 && scrollProgress < 0.68) {
+      // Phase 3: Projects Pocket Focus - move down-left to focus on pocket
+      const t = (scrollProgress - 0.58) / 0.1;
       targetX = THREE.MathUtils.lerp(-0.15, -0.28, t);
       targetY = THREE.MathUtils.lerp(0.9, -0.4, t);
       targetZ = THREE.MathUtils.lerp(2.3, 1.25, t);
@@ -48,6 +48,16 @@ export function CameraRig({ scrollProgress }: CameraRigProps) {
       lookX = THREE.MathUtils.lerp(0.0, -0.28, t);
       lookY = THREE.MathUtils.lerp(0.9, -0.6, t);
       lookZ = THREE.MathUtils.lerp(0.0, 0.1, t);
+    } else {
+      // Phase 4: Experience Vault - zoom to center chest zipper
+      const t = Math.min(1.0, (scrollProgress - 0.68) / 0.23);
+      targetX = THREE.MathUtils.lerp(-0.28, 0.0, t);
+      targetY = THREE.MathUtils.lerp(-0.4, 0.2, t);
+      targetZ = THREE.MathUtils.lerp(1.25, 1.45, t);
+      
+      lookX = THREE.MathUtils.lerp(-0.28, 0.0, t);
+      lookY = THREE.MathUtils.lerp(-0.6, 0.1, t);
+      lookZ = THREE.MathUtils.lerp(0.1, 0.0, t);
     }
 
     targetPos.current.set(targetX, targetY, targetZ);
