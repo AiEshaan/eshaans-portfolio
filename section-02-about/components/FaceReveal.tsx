@@ -4,6 +4,8 @@ import React, { useRef, useEffect, useState } from "react";
 import { useFrame, useLoader } from "@react-three/fiber";
 import * as THREE from "three";
 
+import { CharacterAssetManager } from "../../shared/character/CharacterAssetManager";
+
 interface FaceRevealProps {
   scrollProgress: number;
 }
@@ -19,7 +21,7 @@ export function FaceReveal({ scrollProgress }: FaceRevealProps) {
   useEffect(() => {
     // Load image and parse pixels
     const img = new Image();
-    img.src = "/assets/references/eshaan-face-reference.png";
+    img.src = CharacterAssetManager.getReferences().faceReference;
     img.crossOrigin = "anonymous";
     
     img.onload = () => {
