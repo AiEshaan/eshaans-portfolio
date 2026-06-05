@@ -31,7 +31,8 @@ export function ProjectLoader({ selectedProject, onClose }: ProjectLoaderProps) 
         </div>
         <button
           onClick={onClose}
-          className="px-4 py-2 text-[10px] text-zinc-300 font-mono uppercase tracking-widest border border-zinc-700 rounded-full hover:bg-zinc-800 hover:text-white transition-all cursor-pointer"
+          aria-label="Return to Projects Pocket"
+          className="px-4 py-2 text-[10px] text-zinc-300 font-mono uppercase tracking-widest border border-zinc-700 rounded-full hover:bg-zinc-800 hover:text-white transition-all cursor-pointer focus:outline-none focus:ring-1 focus:ring-zinc-400"
         >
           [ Return to Pocket ]
         </button>

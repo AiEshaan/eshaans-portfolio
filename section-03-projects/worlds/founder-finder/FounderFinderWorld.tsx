@@ -34,7 +34,7 @@ export function FounderFinderWorld({ isActive, onClose }: FounderFinderWorldProp
         <meshStandardMaterial color="#888888" roughness={0.5} metalness={0.8} />
       </mesh>
       <Text
-        font="https://fonts.gstatic.com/s/outfit/v11/QId5dDEDcdS2Ma1357i8rnWpQDw.woff"
+        font="/fonts/outfit.ttf"
         fontSize={0.06}
         color="#a1a1aa"
         position={[0, 0.4, 0]}
@@ -46,3 +46,4 @@ export function FounderFinderWorld({ isActive, onClose }: FounderFinderWorldProp
 }
 
 export default FounderFinderWorld;
+

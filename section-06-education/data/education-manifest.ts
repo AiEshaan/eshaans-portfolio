@@ -1,0 +1,45 @@
+export interface EducationData {
+  institution: string;
+  degree: string;
+  duration: string;
+  location: string;
+  performance: string;
+  details: string[];
+}
+
+export const educationManifest: EducationData[] = [
+  {
+    institution: "Balmandir High School",
+    degree: "Secondary School Education",
+    duration: "2020",
+    location: "Karwar, Karnataka",
+    performance: "79.87%",
+    details: [
+      "Completed standard curriculum focusing on fundamental sciences and mathematical concepts.",
+      "Engaged in logic, analytical thinking, and early programming basics."
+    ]
+  },
+  {
+    institution: "Government PU College",
+    degree: "Pre-University Education (Science Stream)",
+    duration: "2020 - 2022",
+    location: "Karwar, Karnataka",
+    performance: "85% (Estimated)",
+    details: [
+      "Specialized in Physics, Chemistry, Mathematics, and Computer Science (PCMC).",
+      "Built core foundations of algebra, calculus, Newtonian mechanics, and structured problem-solving."
+    ]
+  },
+  {
+    institution: "Canara Engineering College",
+    degree: "B.E. in Artificial Intelligence and Machine Learning",
+    duration: "2022 - 2026",
+    location: "Mangaluru, Karnataka",
+    performance: "CGPA: 7.5 / 10",
+    details: [
+      "Specialized coursework in deep learning, neural networks, computer vision, and NLP.",
+      "Led college development projects, architecting full-stack software and smart automation agents.",
+      "Presented research and prototypes at college hackathons and local tech exhibitions."
+    ]
+  }
+];

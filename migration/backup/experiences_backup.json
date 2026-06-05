@@ -1,0 +1,28 @@
+[
+  {
+    "company": "MindMatrix",
+    "role": "AI Developer Intern",
+    "duration": "Aug 2025 - Present",
+    "description": "Architected AI-powered automation pipelines and localized recommendation systems for cultural exploration platforms.",
+    "achievements": [
+      "Integrated Gemini LLM pipelines to generate real-time cultural event suggestions.",
+      "Engineered full-stack Firebase services with offline fallbacks.",
+      "Refined database queries decreasing load latency by 20%."
+    ],
+    "logo": "",
+    "order": 1
+  },
+  {
+    "company": "Freelance AI Automation",
+    "role": "AI & Full-Stack Developer",
+    "duration": "2024 - Present",
+    "description": "Developed and deployed custom AI tooling, lead qualification agents, and custom scraper automation scripts for clients.",
+    "achievements": [
+      "Built 'Founder Finder' pipeline automating founder research and lead scoring.",
+      "Engineered automated spam filters using text classification algorithms.",
+      "Deployed custom automation workflows reducing operational overhead by 40%."
+    ],
+    "logo": "",
+    "order": 2
+  }
+]

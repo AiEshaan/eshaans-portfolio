@@ -2,7 +2,11 @@
 
 import React from "react";
 import { BaseProjectWorld } from "../../../section-03-projects/components/BaseProjectWorld";
-import { Text } from "@react-three/drei";
+import { FreelanceWorkshop } from "./FreelanceWorkshop";
+import { FounderFinderZone } from "./FounderFinderZone";
+import { AutomationPipelineZone } from "./AutomationPipelineZone";
+import { ExperimentLab } from "./ExperimentLab";
+import { WorkshopImpact } from "./WorkshopImpact";
 
 interface FreelanceWorldProps {
   isActive: boolean;
@@ -21,7 +25,15 @@ export function FreelanceWorld({ isActive, onClose }: FreelanceWorldProps) {
     },
     {
       title: "Solution",
-      text: "Integrated n8n automations and AI classifiers to scoring and filter leads automatically."
+      text: "Integrated n8n automations, custom scrapers, and AI classifiers to score and filter leads automatically."
+    },
+    {
+      title: "Technology",
+      text: "n8n workflow engine, Python scrapers, OpenAI API, and custom TypeScript lead pipelines."
+    },
+    {
+      title: "Impact",
+      text: "Decreased target client manual research overhead by 40% with high scoring confidence."
     }
   ];
 
@@ -31,20 +43,21 @@ export function FreelanceWorld({ isActive, onClose }: FreelanceWorldProps) {
       onClose={onClose}
       title="Freelance AI Automation"
       narrativeSlides={narrativeSlides}
+      rightPanelContent={<WorkshopImpact />}
     >
-      <mesh position={[0, 0, 0]}>
-        <icosahedronGeometry args={[0.3]} />
-        <meshStandardMaterial color="#888888" roughness={0.4} metalness={0.85} />
-      </mesh>
-      <Text
-        font="https://fonts.gstatic.com/s/outfit/v11/QId5dDEDcdS2Ma1357i8rnWpQDw.woff"
-        fontSize={0.055}
-        color="#a1a1aa"
-        position={[0, 0.4, 0]}
-      >
-        [ Freelance AI Sandbox ]
-      </Text>
+      {/* Central workbench grid / table chassis */}
+      <FreelanceWorkshop />
+
+      {/* Zone 1: Founder Finder Scraper network graph */}
+      <FounderFinderZone />
+
+      {/* Zone 2: n8n Automation flow pipelines and moving packets */}
+      <AutomationPipelineZone />
+
+      {/* Zone 3: AI experiments, prompt testbeds, and orbit sensors */}
+      <ExperimentLab />
     </BaseProjectWorld>
   );
 }
+
 export default FreelanceWorld;

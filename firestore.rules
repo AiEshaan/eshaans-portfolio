@@ -1,0 +1,57 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Helper to check if user is authenticated
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+
+    // Projects collection rules: read by anyone, write/edit/delete only by authenticated admins
+    match /projects/{projectId} {
+      allow read: if true;
+      allow write, update, delete: if isAuthenticated();
+    }
+
+    // Config settings rules: read by anyone, write by admin
+    match /settings/{settingId} {
+      allow read: if true;
+      allow write: if isAuthenticated();
+    }
+
+    // Analytics rules: anyone can write (since events are reported by client), only admin can read/delete
+    match /analytics/{docId} {
+      allow read, delete: if isAuthenticated();
+      allow create, update: if true;
+    }
+    match /analytics_events/{docId} {
+      allow read, delete: if isAuthenticated();
+      allow create, update: if true;
+    }
+
+    // Other collections (experiences, skills, education, certifications, contacts)
+    match /experiences/{id} {
+      allow read: if true;
+      allow write: if isAuthenticated();
+    }
+    match /skills/{id} {
+      allow read: if true;
+      allow write: if isAuthenticated();
+    }
+    match /education/{id} {
+      allow read: if true;
+      allow write: if isAuthenticated();
+    }
+    match /certifications/{id} {
+      allow read: if true;
+      allow write: if isAuthenticated();
+    }
+    match /contact/{id} {
+      allow read: if true;
+      allow write: if isAuthenticated();
+    }
+    match /resumes/{id} {
+      allow read: if true;
+      allow write: if isAuthenticated();
+    }
+  }
+}

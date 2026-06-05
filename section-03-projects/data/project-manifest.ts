@@ -1,8 +1,8 @@
-import neuraSentinel from "../../assets/projects/neura-sentinel/project.json";
-import founderFinder from "../../assets/projects/founder-finder/project.json";
-import spamDetector from "../../assets/projects/spam-detector/project.json";
-import skinCancer from "../../assets/projects/skin-cancer/project.json";
-import karunadaKala from "../../assets/projects/karunada-kala/project.json";
+import neuraSentinel from "../../public/assets/projects/neura-sentinel/project.json";
+import founderFinder from "../../public/assets/projects/founder-finder/project.json";
+import spamDetector from "../../public/assets/projects/spam-detector/project.json";
+import skinCancer from "../../public/assets/projects/skin-cancer/project.json";
+import karunadaKala from "../../public/assets/projects/karunada-kala/project.json";
 
 export interface ProjectData {
   title: string;

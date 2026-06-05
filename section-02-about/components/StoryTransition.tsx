@@ -25,7 +25,7 @@ export function StoryTransition({ scrollProgress }: StoryTransitionProps) {
     <group position={[0, -0.3, 1.2]}>
       {/* Prime Line */}
       <Text
-        font="https://fonts.gstatic.com/s/outfit/v11/QId5dDEDcdS2Ma1357i8rnWpQDw.woff"
+        font="/fonts/outfit.ttf"
         fontSize={0.08}
         maxWidth={1.5}
         textAlign="center"
@@ -40,7 +40,7 @@ export function StoryTransition({ scrollProgress }: StoryTransitionProps) {
       {/* Sub Line */}
       <Text
         position={[0, -0.07, 0]}
-        font="https://fonts.gstatic.com/s/inter/v18/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyfMZg.woff"
+        font="/fonts/inter.ttf"
         fontSize={0.05}
         textAlign="center"
         anchorX="center"
@@ -53,3 +53,4 @@ export function StoryTransition({ scrollProgress }: StoryTransitionProps) {
     </group>
   );
 }
+

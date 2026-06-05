@@ -4,17 +4,16 @@ import React, { useRef, useState } from "react";
 import { useFrame } from "@react-three/fiber";
 import { Text } from "@react-three/drei";
 import * as THREE from "three";
-import { ProjectData } from "../data/project-manifest";
+import { Project } from "../../types/Project";
 
 interface ProjectCapsuleProps {
-  project: ProjectData;
+  project: Project;
   index: number;
   scrollProgress: number;
   onSelect: (title: string) => void;
-  isSelected: boolean;
 }
 
-export function ProjectCapsule({ project, index, scrollProgress, onSelect, isSelected }: ProjectCapsuleProps) {
+export function ProjectCapsule({ project, index, scrollProgress, onSelect }: ProjectCapsuleProps) {
   const meshRef = useRef<THREE.Group>(null);
   const [hovered, setHovered] = useState(false);
 
@@ -109,7 +108,7 @@ export function ProjectCapsule({ project, index, scrollProgress, onSelect, isSel
       <group position={[0, 0.18, 0]}>
         {/* Project Name */}
         <Text
-          font="https://fonts.gstatic.com/s/outfit/v11/QId5dDEDcdS2Ma1357i8rnWpQDw.woff"
+          font="/fonts/outfit.ttf"
           fontSize={0.045}
           anchorX="center"
           anchorY="bottom"
@@ -121,7 +120,7 @@ export function ProjectCapsule({ project, index, scrollProgress, onSelect, isSel
         {/* Tagline */}
         <Text
           position={[0, -0.015, 0]}
-          font="https://fonts.gstatic.com/s/inter/v18/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyfMZg.woff"
+          font="/fonts/inter.ttf"
           fontSize={0.02}
           maxWidth={0.22}
           textAlign="center"
@@ -135,7 +134,7 @@ export function ProjectCapsule({ project, index, scrollProgress, onSelect, isSel
         {/* Category Badge */}
         <Text
           position={[0, -0.055, 0]}
-          font="https://fonts.gstatic.com/s/inter/v18/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyfMZg.woff"
+          font="/fonts/inter.ttf"
           fontSize={0.015}
           color="#d4d4d8"
           anchorX="center"
@@ -147,3 +146,4 @@ export function ProjectCapsule({ project, index, scrollProgress, onSelect, isSel
     </group>
   );
 }
+

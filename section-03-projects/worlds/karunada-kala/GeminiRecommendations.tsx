@@ -18,19 +18,19 @@ export function GeminiRecommendations() {
     <group ref={panelRef} position={[0.7, 0.5, 0.4]}>
       {/* Heading */}
       <Text
-        font="https://fonts.gstatic.com/s/outfit/v11/QId5dDEDcdS2Ma1357i8rnWpQDw.woff"
+        font="/fonts/outfit.ttf"
         fontSize={0.05}
         color="#ffe5cc"
         anchorX="left"
         anchorY="bottom"
       >
-        // GEMINI ENGINE ACTIVE
+        {"// GEMINI ENGINE ACTIVE"}
       </Text>
 
       {/* Rec 1 */}
       <group position={[0, -0.06, 0]}>
         <Text
-          font="https://fonts.gstatic.com/s/outfit/v11/QId5dDEDcdS2Ma1357i8rnWpQDw.woff"
+          font="/fonts/outfit.ttf"
           fontSize={0.08}
           color="#ffffff"
           anchorX="left"
@@ -40,7 +40,7 @@ export function GeminiRecommendations() {
         </Text>
         <Text
           position={[0, -0.015, 0]}
-          font="https://fonts.gstatic.com/s/inter/v18/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyfMZg.woff"
+          font="/fonts/inter.ttf"
           fontSize={0.035}
           color="#888888"
           anchorX="left"
@@ -53,7 +53,7 @@ export function GeminiRecommendations() {
       {/* Rec 2 */}
       <group position={[0, -0.16, 0]}>
         <Text
-          font="https://fonts.gstatic.com/s/outfit/v11/QId5dDEDcdS2Ma1357i8rnWpQDw.woff"
+          font="/fonts/outfit.ttf"
           fontSize={0.08}
           color="#ffffff"
           anchorX="left"
@@ -63,7 +63,7 @@ export function GeminiRecommendations() {
         </Text>
         <Text
           position={[0, -0.015, 0]}
-          font="https://fonts.gstatic.com/s/inter/v18/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyfMZg.woff"
+          font="/fonts/inter.ttf"
           fontSize={0.035}
           color="#888888"
           anchorX="left"
@@ -75,3 +75,4 @@ export function GeminiRecommendations() {
     </group>
   );
 }
+

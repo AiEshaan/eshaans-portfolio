@@ -1,17 +1,18 @@
 "use client";
 
 import React from "react";
-import { experienceManifest } from "../data/experience-manifest";
+import { Experience } from "../../types/Experience";
 
 interface ExperienceLoaderProps {
   selectedExperience: string | null;
   onClose: () => void;
+  experiences: Experience[];
 }
 
-export function ExperienceLoader({ selectedExperience, onClose }: ExperienceLoaderProps) {
+export function ExperienceLoader({ selectedExperience, onClose, experiences }: ExperienceLoaderProps) {
   if (!selectedExperience) return null;
 
-  const data = experienceManifest.find((exp) => exp.company === selectedExperience);
+  const data = experiences.find((exp) => exp.company === selectedExperience);
   if (!data) return null;
 
   return (
@@ -27,12 +28,13 @@ export function ExperienceLoader({ selectedExperience, onClose }: ExperienceLoad
             {data.company}
           </h2>
           <p className="text-sm text-zinc-400 font-mono mt-1">
-            {data.role} // {data.duration}
+            {data.role} {"//"} {data.duration}
           </p>
         </div>
         <button
           onClick={onClose}
-          className="px-4 py-2 text-[10px] text-zinc-300 font-mono uppercase tracking-widest border border-zinc-700 rounded-full hover:bg-zinc-800 hover:text-white transition-all cursor-pointer"
+          aria-label="Return to Experience Vault"
+          className="px-4 py-2 text-[10px] text-zinc-300 font-mono uppercase tracking-widest border border-zinc-700 rounded-full hover:bg-zinc-800 hover:text-white transition-all cursor-pointer focus:outline-none focus:ring-1 focus:ring-zinc-400"
         >
           [ Return to Vault ]
         </button>

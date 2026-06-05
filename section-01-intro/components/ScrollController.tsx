@@ -154,6 +154,136 @@ export function ScrollController({ onScrollProgress }: ScrollControllerProps) {
           scrub: true,
         },
       });
+
+      // Skills Galaxy Text Fade In / Out
+      gsap.fromTo(
+        ".skills-intro",
+        { opacity: 0, y: 40 },
+        {
+          opacity: 1,
+          y: 0,
+          scrollTrigger: {
+            trigger: ".trigger-skills-galaxy",
+            start: "top 60%",
+            end: "top 20%",
+            scrub: true,
+          },
+        }
+      );
+      gsap.to(".skills-intro", {
+        opacity: 0,
+        y: -40,
+        scrollTrigger: {
+          trigger: ".trigger-skills-galaxy",
+          start: "bottom 80%",
+          end: "bottom 40%",
+          scrub: true,
+        },
+      });
+
+      // Education Portal Text Fade In / Out
+      gsap.fromTo(
+        ".edu-intro",
+        { opacity: 0, y: 40 },
+        {
+          opacity: 1,
+          y: 0,
+          scrollTrigger: {
+            trigger: ".trigger-education",
+            start: "top 60%",
+            end: "top 20%",
+            scrub: true,
+          },
+        }
+      );
+      gsap.to(".edu-intro", {
+        opacity: 0,
+        y: -40,
+        scrollTrigger: {
+          trigger: ".trigger-education",
+          start: "bottom 80%",
+          end: "bottom 40%",
+          scrub: true,
+        },
+      });
+
+      // Certifications Archive Text Fade In / Out
+      gsap.fromTo(
+        ".cert-intro",
+        { opacity: 0, y: 40 },
+        {
+          opacity: 1,
+          y: 0,
+          scrollTrigger: {
+            trigger: ".trigger-certifications",
+            start: "top 60%",
+            end: "top 20%",
+            scrub: true,
+          },
+        }
+      );
+      gsap.to(".cert-intro", {
+        opacity: 0,
+        y: -40,
+        scrollTrigger: {
+          trigger: ".trigger-certifications",
+          start: "bottom 80%",
+          end: "bottom 40%",
+          scrub: true,
+        },
+      });
+
+      // Contact Portal Text Fade In / Out
+      gsap.fromTo(
+        ".contact-intro",
+        { opacity: 0, y: 40 },
+        {
+          opacity: 1,
+          y: 0,
+          scrollTrigger: {
+            trigger: ".trigger-contact",
+            start: "top 60%",
+            end: "top 20%",
+            scrub: true,
+          },
+        }
+      );
+      gsap.to(".contact-intro", {
+        opacity: 0,
+        y: -40,
+        scrollTrigger: {
+          trigger: ".trigger-contact",
+          start: "bottom 80%",
+          end: "bottom 40%",
+          scrub: true,
+        },
+      });
+
+      // Ending Sequence Text Fade In / Out
+      gsap.fromTo(
+        ".ending-intro",
+        { opacity: 0, y: 40 },
+        {
+          opacity: 1,
+          y: 0,
+          scrollTrigger: {
+            trigger: ".trigger-ending",
+            start: "top 60%",
+            end: "top 20%",
+            scrub: true,
+          },
+        }
+      );
+      gsap.to(".ending-intro", {
+        opacity: 0,
+        y: -40,
+        scrollTrigger: {
+          trigger: ".trigger-ending",
+          start: "bottom 80%",
+          end: "bottom 40%",
+          scrub: true,
+        },
+      });
     }, containerRef);
 
     return () => {
@@ -174,6 +304,11 @@ export function ScrollController({ onScrollProgress }: ScrollControllerProps) {
       <div className="trigger-projects-pocket h-screen w-full" />
       <div className="trigger-experience-intro h-screen w-full" />
       <div className="trigger-experience-open h-[150vh] w-full" />
+      <div className="trigger-skills-galaxy h-[150vh] w-full" />
+      <div className="trigger-education h-[150vh] w-full" />
+      <div className="trigger-certifications h-[150vh] w-full" />
+      <div className="trigger-contact h-[150vh] w-full" />
+      <div className="trigger-ending h-[150vh] w-full" />
       <div className="h-screen w-full" /> {/* Buffer zone */}
 
       {/* HTML Overlays */}
@@ -228,6 +363,66 @@ export function ScrollController({ onScrollProgress }: ScrollControllerProps) {
             </p>
             <p className="text-base md:text-lg font-light text-zinc-400 mt-2">
               Working with people taught me impact.
+            </p>
+          </div>
+        </div>
+
+        {/* Skills Galaxy Intro Text Overlay */}
+        <div className="absolute inset-0 flex items-center justify-center p-8">
+          <div className="skills-intro opacity-0 text-center max-w-xl">
+            <p className="text-xl md:text-2xl font-light text-zinc-100 tracking-wide leading-relaxed">
+              The galaxy of systems and languages.
+            </p>
+            <p className="text-base md:text-lg font-light text-zinc-400 mt-2">
+              Powering AI solutions, full-stack architectures, and automations.
+            </p>
+          </div>
+        </div>
+
+        {/* Education Portal Intro Text Overlay */}
+        <div className="absolute inset-0 flex items-center justify-center p-8">
+          <div className="edu-intro opacity-0 text-center max-w-xl">
+            <p className="text-xl md:text-2xl font-light text-zinc-100 tracking-wide leading-relaxed">
+              Every skill has a source.
+            </p>
+            <p className="text-base md:text-lg font-light text-zinc-400 mt-2">
+              Here is mine.
+            </p>
+          </div>
+        </div>
+
+        {/* Certifications Archive Intro Text Overlay */}
+        <div className="absolute inset-0 flex items-center justify-center p-8">
+          <div className="cert-intro opacity-0 text-center max-w-xl">
+            <p className="text-xl md:text-2xl font-light text-zinc-100 tracking-wide leading-relaxed">
+              Validation of continuous growth.
+            </p>
+            <p className="text-base md:text-lg font-light text-zinc-400 mt-2">
+              Professional credentials in AI, Data, and DevOps.
+            </p>
+          </div>
+        </div>
+
+        {/* Contact Portal Intro Text Overlay */}
+        <div className="absolute inset-0 flex items-center justify-center p-8">
+          <div className="contact-intro opacity-0 text-center max-w-xl">
+            <p className="text-xl md:text-2xl font-light text-zinc-100 tracking-wide leading-relaxed">
+              Let&apos;s build something meaningful.
+            </p>
+            <p className="text-base md:text-lg font-light text-zinc-400 mt-2">
+              Reach out via Email, LinkedIn, GitHub, or download my Resume.
+            </p>
+          </div>
+        </div>
+
+        {/* Ending Sequence Intro Text Overlay */}
+        <div className="absolute inset-0 flex items-center justify-center p-8">
+          <div className="ending-intro opacity-0 text-center max-w-xl">
+            <p className="text-xl md:text-2xl font-light text-zinc-100 tracking-wide leading-relaxed">
+              A cinematic journey complete.
+            </p>
+            <p className="text-base md:text-lg font-light text-zinc-400 mt-2">
+              Building intelligent systems that solve real problems.
             </p>
           </div>
         </div>

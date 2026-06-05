@@ -48,11 +48,12 @@ export class CharacterAssetManager {
    * Evaluates attachment active status based on the current scroll step progression.
    */
   static getAttachmentsForProgress(scrollProgress: number): CharacterAttachmentState {
+    const isEnding = scrollProgress >= 0.90;
     return {
-      idCardAttached: scrollProgress >= 0.7 && scrollProgress < 0.85,
-      projectPocketAttached: scrollProgress >= 0.82 && scrollProgress < 0.98,
-      experienceVaultAttached: scrollProgress >= 0.45 && scrollProgress < 0.6,
-      contactTabletAttached: scrollProgress >= 0.92
+      idCardAttached: isEnding || (scrollProgress >= 0.20 && scrollProgress < 0.38) || (scrollProgress >= 0.68 && scrollProgress < 0.77),
+      projectPocketAttached: isEnding || (scrollProgress >= 0.38 && scrollProgress < 0.44),
+      experienceVaultAttached: isEnding || (scrollProgress >= 0.44 && scrollProgress < 0.59),
+      contactTabletAttached: isEnding || (scrollProgress >= 0.80 && scrollProgress < 0.90)
     };
   }
 }

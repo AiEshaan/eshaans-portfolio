@@ -33,7 +33,7 @@ export function SpamDetectorWorld({ isActive, onClose }: SpamDetectorWorldProps)
         <meshStandardMaterial color="#888888" roughness={0.4} metalness={0.9} />
       </mesh>
       <Text
-        font="https://fonts.gstatic.com/s/outfit/v11/QId5dDEDcdS2Ma1357i8rnWpQDw.woff"
+        font="/fonts/outfit.ttf"
         fontSize={0.06}
         color="#a1a1aa"
         position={[0, 0.4, 0]}
@@ -45,3 +45,4 @@ export function SpamDetectorWorld({ isActive, onClose }: SpamDetectorWorldProps)
 }
 
 export default SpamDetectorWorld;
+

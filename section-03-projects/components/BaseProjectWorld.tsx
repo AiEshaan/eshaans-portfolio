@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useRef, useEffect, ReactNode } from "react";
+import React, { useState, useRef, ReactNode } from "react";
 import { useFrame } from "@react-three/fiber";
 import { Text } from "@react-three/drei";
 import * as THREE from "three";
@@ -21,8 +21,6 @@ interface BaseProjectWorldProps {
 
 export function BaseProjectWorld({
   isActive,
-  onClose,
-  title,
   narrativeSlides,
   children,
   rightPanelContent
@@ -55,13 +53,13 @@ export function BaseProjectWorld({
       {/* Narrative Documentation Board (Left Side) */}
       <group position={[-0.8, 0.5, 0.4]}>
         <Text
-          font="https://fonts.gstatic.com/s/outfit/v11/QId5dDEDcdS2Ma1357i8rnWpQDw.woff"
+          font="/fonts/outfit.ttf"
           fontSize={0.045}
           color="#d4af37"
           anchorX="right"
           anchorY="bottom"
         >
-          // NARRATIVE WORKFLOW
+          {"// NARRATIVE WORKFLOW"}
         </Text>
 
         {narrativeSlides.map((slide, index) => {
@@ -69,7 +67,7 @@ export function BaseProjectWorld({
           return (
             <group key={slide.title} position={[0, -0.06 - index * 0.09, 0]}>
               <Text
-                font="https://fonts.gstatic.com/s/outfit/v11/QId5dDEDcdS2Ma1357i8rnWpQDw.woff"
+                font="/fonts/outfit.ttf"
                 fontSize={0.055}
                 color={isCurrent ? "#ffffff" : "#444444"}
                 anchorX="right"
@@ -80,7 +78,7 @@ export function BaseProjectWorld({
               {isCurrent && (
                 <Text
                   position={[0, -0.015, 0]}
-                  font="https://fonts.gstatic.com/s/inter/v18/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyfMZg.woff"
+                  font="/fonts/inter.ttf"
                   fontSize={0.035}
                   maxWidth={0.45}
                   textAlign="right"
@@ -103,3 +101,4 @@ export function BaseProjectWorld({
   );
 }
 export default BaseProjectWorld;
+

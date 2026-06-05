@@ -34,10 +34,16 @@ export function SensorTrails() {
     const speeds = new Float32Array(count);
     
     for (let i = 0; i < count; i++) {
-      positions[i * 3] = (Math.random() - 0.5) * 1.5;
-      positions[i * 3 + 1] = (Math.random() - 0.5) * 1.5;
-      positions[i * 3 + 2] = (Math.random() - 0.5) * 0.8;
-      speeds[i] = 0.2 + Math.random() * 0.5;
+      // Deterministic pseudo-random values using sine/cosine functions of index i
+      const pseudoX = Math.sin(i * 12.9898 + 1.0);
+      const pseudoY = Math.cos(i * 78.233 + 2.0);
+      const pseudoZ = Math.sin(i * 45.123 + 3.0);
+      const pseudoSpeed = (Math.sin(i * 93.112 + 4.0) + 1.0) * 0.5; // 0 to 1
+      
+      positions[i * 3] = pseudoX * 0.75; // -0.75 to 0.75
+      positions[i * 3 + 1] = pseudoY * 0.75;
+      positions[i * 3 + 2] = pseudoZ * 0.4;
+      speeds[i] = 0.2 + pseudoSpeed * 0.5; // 0.2 to 0.7
     }
     
     return { positions, speeds };

@@ -1,0 +1,21 @@
+export interface ContactManifest {
+  email: string;
+  github: string;
+  linkedin: string;
+  resumeUrl: string;
+  githubRepos: { name: string; desc: string; stars: number }[];
+  linkedinSummary: string;
+}
+
+export const contactManifest: ContactManifest = {
+  email: "eshaanpm2004@gmail.com",
+  github: "https://github.com/AiEshaan",
+  linkedin: "https://linkedin.com/in/eshaanpm",
+  resumeUrl: "/assets/resumes/eshaan-resume.pdf",
+  githubRepos: [
+    { name: "neura-sentinel", desc: "AI-Powered Sports Performance Monitoring System", stars: 12 },
+    { name: "founder-finder", desc: "LinkedIn automation scraper and lead scoring tool", stars: 8 },
+    { name: "spam-detector", desc: "AI model filtering spam inputs using text classification", stars: 5 }
+  ],
+  linkedinSummary: "AI & Full-Stack Developer specializing in automation workflows, agent modeling, and next-gen interfaces."
+};

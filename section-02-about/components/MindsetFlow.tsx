@@ -47,7 +47,7 @@ export function MindsetFlow({ scrollProgress }: MindsetFlowProps) {
 
   return (
     <group ref={groupRef}>
-      {nodes.map((node, index) => {
+      {nodes.map((node) => {
         // Calculate opacity based on scroll trigger zones
         let opacity = 0;
         if (scrollProgress >= node.startProgress) {
@@ -64,7 +64,7 @@ export function MindsetFlow({ scrollProgress }: MindsetFlowProps) {
           <group key={node.title} position={[node.posX, node.posY, node.posZ]}>
             {/* Title text */}
             <Text
-              font="https://fonts.gstatic.com/s/outfit/v11/QId5dDEDcdS2Ma1357i8rnWpQDw.woff"
+              font="/fonts/outfit.ttf"
               fontSize={0.15}
               anchorX="center"
               anchorY="middle"
@@ -80,7 +80,7 @@ export function MindsetFlow({ scrollProgress }: MindsetFlowProps) {
             {/* Description Subtext */}
             <Text
               position={[0, -0.12, 0]}
-              font="https://fonts.gstatic.com/s/inter/v18/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyfMZg.woff"
+              font="/fonts/inter.ttf"
               fontSize={0.065}
               maxWidth={0.65}
               lineHeight={1.4}
@@ -98,3 +98,4 @@ export function MindsetFlow({ scrollProgress }: MindsetFlowProps) {
     </group>
   );
 }
+

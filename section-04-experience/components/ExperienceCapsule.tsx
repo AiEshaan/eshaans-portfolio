@@ -4,18 +4,17 @@ import React, { useRef, useState } from "react";
 import { useFrame } from "@react-three/fiber";
 import { Text } from "@react-three/drei";
 import * as THREE from "three";
-import { ExperienceData } from "../data/experience-manifest";
+import { Experience } from "../../types/Experience";
 import { CharacterAssetManager } from "../../shared/character/CharacterAssetManager";
 
 interface ExperienceCapsuleProps {
-  experience: ExperienceData;
+  experience: Experience;
   index: number;
   scrollProgress: number;
   onSelect: (company: string) => void;
-  isSelected: boolean;
 }
 
-export function ExperienceCapsule({ experience, index, scrollProgress, onSelect, isSelected }: ExperienceCapsuleProps) {
+export function ExperienceCapsule({ experience, index, scrollProgress, onSelect }: ExperienceCapsuleProps) {
   const meshRef = useRef<THREE.Group>(null);
   const [hovered, setHovered] = useState(false);
 
@@ -108,7 +107,7 @@ export function ExperienceCapsule({ experience, index, scrollProgress, onSelect,
       {/* Text overlays */}
       <group position={[0, 0.2, 0]}>
         <Text
-          font="https://fonts.gstatic.com/s/outfit/v11/QId5dDEDcdS2Ma1357i8rnWpQDw.woff"
+          font="/fonts/outfit.ttf"
           fontSize={0.045}
           color="#ffffff"
           anchorX="center"
@@ -119,7 +118,7 @@ export function ExperienceCapsule({ experience, index, scrollProgress, onSelect,
 
         <Text
           position={[0, -0.015, 0]}
-          font="https://fonts.gstatic.com/s/inter/v18/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyfMZg.woff"
+          font="/fonts/inter.ttf"
           fontSize={0.022}
           color="#a1a1aa"
           anchorX="center"
@@ -130,7 +129,7 @@ export function ExperienceCapsule({ experience, index, scrollProgress, onSelect,
 
         <Text
           position={[0, -0.05, 0]}
-          font="https://fonts.gstatic.com/s/inter/v18/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyfMZg.woff"
+          font="/fonts/inter.ttf"
           fontSize={0.018}
           color="#71717a"
           anchorX="center"
@@ -142,3 +141,4 @@ export function ExperienceCapsule({ experience, index, scrollProgress, onSelect,
     </group>
   );
 }
+

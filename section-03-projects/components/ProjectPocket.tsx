@@ -1,9 +1,11 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { PocketDoor } from "./PocketDoor";
 import { ProjectCapsule } from "./ProjectCapsule";
 import { projectManifest } from "../data/project-manifest";
+import { ProjectsService } from "../../firebase/firestore";
+import { Project } from "../../types/Project";
 
 interface ProjectPocketProps {
   scrollProgress: number;
@@ -12,6 +14,26 @@ interface ProjectPocketProps {
 }
 
 export function ProjectPocket({ scrollProgress, onSelectProject, selectedProject }: ProjectPocketProps) {
+  const [projects, setProjects] = useState<Project[]>(projectManifest as Project[]);
+
+  useEffect(() => {
+    let active = true;
+    async function loadProjects() {
+      try {
+        const data = await ProjectsService.getAll();
+        if (active) {
+          setProjects(data);
+        }
+      } catch (e) {
+        console.warn("Failed to load projects from Firestore, using local fallback: ", e);
+      }
+    }
+    loadProjects();
+    return () => {
+      active = false;
+    };
+  }, []);
+
   if (selectedProject !== null) return null;
 
   return (
@@ -20,14 +42,13 @@ export function ProjectPocket({ scrollProgress, onSelectProject, selectedProject
       <PocketDoor scrollProgress={scrollProgress} />
 
       {/* Floating Project Capsules */}
-      {projectManifest.map((project, index) => (
+      {projects.map((project, index) => (
         <ProjectCapsule
           key={project.title}
           project={project}
           index={index}
           scrollProgress={scrollProgress}
           onSelect={onSelectProject}
-          isSelected={selectedProject === project.title}
         />
       ))}
     </group>

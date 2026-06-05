@@ -33,7 +33,7 @@ export function SkinCancerWorld({ isActive, onClose }: SkinCancerWorldProps) {
         <meshStandardMaterial color="#888888" roughness={0.3} metalness={0.95} />
       </mesh>
       <Text
-        font="https://fonts.gstatic.com/s/outfit/v11/QId5dDEDcdS2Ma1357i8rnWpQDw.woff"
+        font="/fonts/outfit.ttf"
         fontSize={0.06}
         color="#a1a1aa"
         position={[0, 0.4, 0]}
@@ -45,3 +45,4 @@ export function SkinCancerWorld({ isActive, onClose }: SkinCancerWorldProps) {
 }
 
 export default SkinCancerWorld;
+
