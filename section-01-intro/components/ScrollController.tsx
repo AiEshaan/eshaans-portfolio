@@ -293,7 +293,7 @@ export function ScrollController({ onScrollProgress }: ScrollControllerProps) {
   }, [onScrollProgress]);
 
   return (
-    <div ref={containerRef} className="absolute inset-0 z-10 pointer-events-none w-full">
+    <div ref={containerRef} className="relative z-10 pointer-events-none w-full">
       {/* Scroll triggers defining vertical height of the scroll sequence */}
       <div className="trigger-intro h-screen w-full" />
       <div className="trigger-phil-1 h-screen w-full" />
