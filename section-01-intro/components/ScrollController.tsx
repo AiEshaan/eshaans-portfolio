@@ -25,17 +25,20 @@ export function ScrollController({ onScrollProgress }: ScrollControllerProps) {
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
     });
 
-    function raf(time: number) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
-    requestAnimationFrame(raf);
+    // Sync Lenis with GSAP ScrollTrigger
+    lenis.on("scroll", ScrollTrigger.update);
 
-    // 2. Track scroll progress
     const handleScroll = () => {
       onScrollProgress(lenis.progress);
     };
     lenis.on("scroll", handleScroll);
+
+    // Use GSAP's ticker to drive Lenis for perfect synchronization
+    const raf = (time: number) => {
+      lenis.raf(time * 1000);
+    };
+    gsap.ticker.add(raf);
+    gsap.ticker.lagSmoothing(0);
 
     // 3. GSAP ScrollTrigger animations
     const ctx = gsap.context(() => {
@@ -287,6 +290,7 @@ export function ScrollController({ onScrollProgress }: ScrollControllerProps) {
     }, containerRef);
 
     return () => {
+      gsap.ticker.remove(raf);
       lenis.destroy();
       ctx.revert();
     };
